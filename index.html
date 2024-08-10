@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Game</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link id="themeStylesheet" rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons8-maze-64.png" type="image/x-icon">
+    <style>
+        /* Additional styling for light and dark themes */
+        .light-theme {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .dark-theme {
+            background-color: #2e3032;
+            color: #f8f9fa;
+        }
+        /* Centering the content */
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        /* Canvas border and rounded corners */
+        #mazeCanvas {
+            border: 2px solid #000;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        /* Themed canvas for dark mode */
+        .dark-theme #mazeCanvas {
+            background-color: #495057;
+            border-color: #ced4da;
+        }
+        /* Themed button and controls */
+        .btn-primary {
+            border-radius: 25px;
+        }
+        .custom-control-label {
+            color: inherit;
+        }
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="container center-content">
+        <h1 class="text-center">Maze Game</h1>
+        <p class="text-center">Use arrow keys to move the key to the house!</p>
+        <div class="text-center mb-4">
+            <label for="difficulty" class="mr-2">Select Difficulty:</label>
+            <select id="difficulty" class="form-control d-inline-block w-auto">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button class="btn btn-primary ml-2" onclick="makeMaze()">Generate New Maze</button>
+        </div>
+        <canvas id="mazeCanvas"></canvas>
+        <div class="mt-4">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="themeSwitch" onchange="toggleTheme()">
+                <label class="custom-control-label" for="themeSwitch">Dark Mode</label>
+            </div>
+        </div>
+    </div>
+
+    <p style="font-family:'Courier New', Courier, monospace; color: rgb(0, 102, 149);">Made by Boweii</p>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
